@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Random Quotes</title>
+</head>
+
+<body>
+	<div>
+		<h1>Random Quotes</h1>
+		<ul>
+			<% randomQuotes.forEach(quote=> { %>
+				<li>
+					<p>Quote: <%= quote.quote %>
+					</p>
+					<h3>Source: <%= quote.source %>
+					</h3>
+				</li>
+				<% }) %>
+		</ul>
+	</div>
+
+	<form method="POST" action="/add">
+		<label for="quote">Quote</label>
+		<input type="text" id="quote" name="quote" required />
+		<label for="source">Source</label>
+		<input type="text" id="source" name="source" />
+		<button type="submit">Create</button>
+	</form>
+
+</body>
+
+</html>
